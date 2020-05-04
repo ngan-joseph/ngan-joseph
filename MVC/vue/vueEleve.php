@@ -1,17 +1,18 @@
 <?php $titre = "Gestion des absences: - " . $eleve['nom']; ?>
 <?php ob_start(); ?>
-<article>
-<header>
+
 	<h1><img src="<?= $eleve["Photo"] ?>" width="40"></h1>
-   <h4><?= $eleve['nom'] ?></h4>
-    <h4><?= $eleve['prenom'] ?></h4>
-    <h4>CNE: <?= $eleve['cne'] ?></h4>
-</header>
-</article>
+   <h5><?= $eleve['nom'] ?></h5>
+    <h5><?= $eleve['prenom'] ?></h5>
+    <h5>CNE: <?= $eleve['cne'] ?></h5>
+      <h6><a href="index3.php"><button>Liste des Eleves</button></a></h6>
 <hr />
-<header>
-  <h2>Le recapitulatif des absences de <?= $eleve['nom'] ?> <?= $eleve['prenom'] ?> est:</h2>
-</header>
+<h5>ETAT: <font color="red" ><?php if($eleve['etat']==1){ echo "Actif";} else{ echo "Inactif";} ?></h5></font>
+
+<hr />
+
+  <h2>Le Bilan des absences de <?= $eleve['nom'] ?> <?= $eleve['prenom'] ?> est:</h2>
+
 <table border="3" bgcolor="teal">
 <tr bgcolor="lightblue">
 <th>Matiere</th>
@@ -27,8 +28,8 @@
 </tr>
 
 <?php endforeach; ?>
-</table><br><br>
-<h2> Nombre d'heures totales par matiere:</h2>
+</table><br><hr>
+<h3> Nombre d'heures totales par matiere:</h3>
 <table border="2">
 	<tr bgcolor="lightgreen">
 		<th>Matieres</th>
@@ -44,11 +45,11 @@
 <?php require 'gabarit.php'; ?>
 
 </table>
-<br><br>
-<h3> Ajouter une abscence :</h3>
-<form method="post" action="index.php?action=ajouter">
-<p><input id="matieres" name="matiere" type="text" placeholder="matiere"  required /><br /></p>
-<p><input id="nombre_heure" name="nombre_heure" placeholder="nombre d heure" required><br /></p>
+<hr>
+<h4> Ajouter une abscence :</h4>
+<form method="post" action="index3.php?action=ajouter">
+<p><input id="matieres" name="matiere" type="text" placeholder="matiere"  required /><br /><br>
+<input id="nombre_heure" name="nombre_heure" placeholder="nombre d heure" required></p>
 <input type="hidden" name="cne" value="<?= $eleve['cne'] ?>" /> 
 <input type="submit" value="Ajouter" />
 </form>

@@ -1,5 +1,5 @@
 <?php
-require_once 'Modele/Modele.php';
+require_once 'modele/Modele.php';
 class Eleve extends Modele {
 // Renvoie la liste des eleves de la base de données
 public function geteleves() {
@@ -17,6 +17,12 @@ if ($eleve->rowCount() == 1)
 return $eleve->fetch(); // Accès à la première ligne de résultat
 else
 throw new Exception("Aucun eleve ne correspond à l'identifiant '$cneeleve'");
+}
+
+public function Inserer($cneeleve,$nom,$prenom,$etat,$photo){
+	$sql = 'insert into eleves(cne, nom, prenom, etat, Photo)'
+. ' values(?, ?, ?, ?, ?)';
+	$this->executerRequete($sql, array($cneeleve, $nom, $prenom, $etat, $photo));
 }
 
 public function activer_desactiver($cneeleve,$etat){

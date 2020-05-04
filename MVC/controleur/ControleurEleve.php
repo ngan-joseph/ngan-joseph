@@ -29,4 +29,7 @@ $this->eleve($cneeleve);
 public function activer_desactiver($cneeleve,$etat){
 	$this->eleve->activer_desactiver($cneeleve,$etat);
 }
+public function inserer($cneeleve,$nom,$prenom,$etat,$photo){
+	$this->eleve->Inserer($cneeleve,$nom,$prenom,$etat,$photo);
+}
 }

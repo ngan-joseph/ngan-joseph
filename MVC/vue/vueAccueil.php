@@ -17,12 +17,12 @@ $lien="";
 if($eleve["etat"]== 1)
 {
 $et="active";
-$lien="index.php?action=activer&cne=".$eleve["cne"]."&etat=0";
+$lien="index3.php?action=activer&cne=".$eleve["cne"]."&etat=0";
 }
 else
 {
 $et="desactive";
-$lien="index.php?action=activer&cne=".$eleve["cne"]."&etat=1";
+$lien="index3.php?action=activer&cne=".$eleve["cne"]."&etat=1";
 }
 ?>
 
@@ -36,7 +36,7 @@ $lien="index.php?action=activer&cne=".$eleve["cne"]."&etat=1";
 <td><?php echo $eleve["prenom"]; ?></td>
 <td><a href="<?php echo $lien; ?>"><?php echo $et; ?></a></td>
 <td><img src="<?= $eleve["Photo"] ?>" width="80"></td>
-<td> <a href="<?= "index.php?action=eleve&cne=" . $eleve['cne'] ?>"><button>Details</button></a></td>
+<td> <a href="<?= "index3.php?action=eleve&cne=" . $eleve['cne'] ?>"><button>Details</button></a></td>
 </tr>
 
 <?php

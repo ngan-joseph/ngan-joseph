@@ -33,6 +33,15 @@ $etat = $this->getParametre($_GET,'etat');
 $this->ctrlEleve->activer_desactiver($cneeleve,$etat);
 $this->ctrlAccueil->accueil();
 }
+else if ($_GET['action'] == 'inserer') {
+$nom = $this->getParametre($_POST, 'nom');
+$prenom = $this->getParametre($_POST, 'prenom');
+$cneeleve = $this->getParametre($_POST, 'cne');
+$photo = "photos/inconnu.jpeg";
+$etat= "1";
+$this->ctrlEleve->inserer($cneeleve, $nom, $prenom, $etat, $photo);
+$this->ctrlAccueil->accueil();
+}
 else
 throw new Exception("Action non valide");
 }
