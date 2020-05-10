@@ -1,0 +1,23 @@
+body  {  color:  black;
+background:  mintcream;
+} 
+
+#global {
+    overflow-x:auto;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+     background-color: teal;
+  border: 1px solid black;
+}
+th {
+  background-color: aliceblue;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+tr:nth-child(even){background-color: white}
